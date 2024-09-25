@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import FetchEmergencyNumbers from "./FetchEmergencyNumbers";
 import { useEffect, useRef, useState } from "react";
+import ToggleSwitch from "./ToggleSwitch";
 
 const MainLayout = () => {
   const navigate = useNavigate();
@@ -9,13 +10,16 @@ const MainLayout = () => {
   const [searchQuery, setSearchQuery] = useState(""); // state for search query
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  //const [selectedCountryData, setSelectedCountryData] = useState(null);
 
   const handleCountrySelect = (countryName) => {
-    //const countryName = e.target.value;
+    /* const countryData = countries.find(
+      (country) => country.Country.Name === countryName
+    ); */
     setSelectedCountry(countryName);
     setSearchQuery(countryName);
+    //setSelectedCountryData(countryData);
     setIsDropdownOpen(false);
-    //navigate("/emergency-call-numbers", { state: { countryName } });
   };
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -47,6 +51,10 @@ const MainLayout = () => {
         <h2 className="text-white">
           Choose a country from the list or use GPS location
         </h2>
+        <div className="flex">
+          <p className="text-white p-1">GPS</p>
+          <ToggleSwitch labelOn="on" labelOff="off" />
+        </div>
 
         {/* fetch and display the countries name */}
         <FetchEmergencyNumbers onCountriesFetched={setCountries} />
@@ -95,10 +103,11 @@ const MainLayout = () => {
         <div className="space-y-4 w-full max-w-md pt-20">
           <Link
             to="/emergency-call-numbers"
+            state={{ countryName: selectedCountry }}
             className="bg-gray-700 text-white w-full p-4 rounded-lg flex items-center justify-center"
             style={{ textDecoration: "none" }}
           >
-            Emergency Services Numbers
+            Emergency Service Numbers
           </Link>
           <Link
             to="/medical-locations"

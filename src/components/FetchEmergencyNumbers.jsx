@@ -1,11 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-function FetchEmergencyNumbers() {
+function FetchEmergencyNumbers({ onCountriesFetched }) {
+  //const [countries, setCountries] = useState([]);
+
   const fetchEmergencyData = async () => {
     try {
-      const responce = await axios.get("http://localhost:${port}");
-      console.log(responce.data.countries);
+      const responce = await axios.get("http://localhost:8081/api/countries");
+      //setCountries(responce.data); // store the fetched data
+      onCountriesFetched(responce.data); //pass the data to the parent
+      console.log(responce);
     } catch (error) {
       console.error(error);
     }
@@ -15,7 +19,7 @@ function FetchEmergencyNumbers() {
     fetchEmergencyData();
   }, []);
 
-  return <p>Welcome to the Emergency App</p>;
+  return <p>Welcome to the FetchEmergencyNumbers.jsx</p>;
 }
 
 export default FetchEmergencyNumbers;

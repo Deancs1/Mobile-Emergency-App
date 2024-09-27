@@ -13,6 +13,7 @@ import {
 import EmergencyCallNumbers from "./components/EmergencyCallNumbers";
 import MedicalLocations from "./components/MedicalLocations";
 import MedicalProcedures from "./components/EmergencyProcedures";
+import IndividualEmergencyProcedures from "./components/IndividualEmergencyProcedures";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
             />
             <Route path="/medical-locations" element={<MedicalLocations />} />
             <Route path="/medical-procedures" element={<MedicalProcedures />} />
+            <Route
+              path="individual-emergency-procedures"
+              element={<IndividualEmergencyProcedures />}
+            />
           </Route>
         </Routes>
       </div>

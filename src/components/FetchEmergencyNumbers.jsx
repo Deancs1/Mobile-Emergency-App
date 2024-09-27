@@ -9,8 +9,13 @@ function FetchEmergencyNumbers({ onCountriesFetched }) {
       const responce = await axios.get(
         "http://192.168.1.42:8081/api/countries"
       );
+      //sort countries alphbetically
+      const sortedCountries = responce.data.sort((a, b) =>
+        a.Country.Name.localeCompare(b.Country.Name)
+      );
+
       //setCountries(responce.data); // store the fetched data
-      onCountriesFetched(responce.data); //pass the data to the parent
+      onCountriesFetched(sortedCountries); //pass the data to the parent
       console.log(responce);
     } catch (error) {
       console.error(error);

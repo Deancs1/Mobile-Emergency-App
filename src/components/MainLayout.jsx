@@ -10,15 +10,15 @@ const MainLayout = () => {
   const [searchQuery, setSearchQuery] = useState(""); // state for search query
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-  //const [selectedCountryData, setSelectedCountryData] = useState(null);
+  const [selectedCountryData, setSelectedCountryData] = useState(null);
 
   const handleCountrySelect = (countryName) => {
-    /* const countryData = countries.find(
+    const countryData = countries.find(
       (country) => country.Country.Name === countryName
-    ); */
+    );
     setSelectedCountry(countryName);
     setSearchQuery(countryName);
-    //setSelectedCountryData(countryData);
+    setSelectedCountryData(countryData);
     setIsDropdownOpen(false);
   };
   const handleSearchChange = (e) => {
@@ -103,7 +103,10 @@ const MainLayout = () => {
         <div className="space-y-4 w-full max-w-md pt-20">
           <Link
             to="/emergency-call-numbers"
-            state={{ countryName: selectedCountry }}
+            state={{
+              countryName: selectedCountry,
+              emergencyNumbers: selectedCountryData, //pass emergency numbers
+            }}
             className="bg-gray-700 text-white w-full p-4 rounded-lg flex items-center justify-center"
             style={{ textDecoration: "none" }}
           >
@@ -123,9 +126,9 @@ const MainLayout = () => {
           >
             Medical Procedures
           </Link>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
+          {/* <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
             Emergency contact
-          </button>
+          </button> */}
         </div>
       </div>
     </>

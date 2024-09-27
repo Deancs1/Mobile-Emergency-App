@@ -6,7 +6,9 @@ function FetchEmergencyNumbers({ onCountriesFetched }) {
 
   const fetchEmergencyData = async () => {
     try {
-      const responce = await axios.get("http://localhost:8081/api/countries");
+      const responce = await axios.get(
+        "http://192.168.1.42:8081/api/countries"
+      );
       //setCountries(responce.data); // store the fetched data
       onCountriesFetched(responce.data); //pass the data to the parent
       console.log(responce);

@@ -52,7 +52,25 @@ const Navbar = () => {
           </>
         );
       default:
-        return null; // If no route matches, don't render any buttons
+        return (
+          <>
+            <Link to="/emergency-call-numbers">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                Emergency Numbers
+              </button>
+            </Link>
+            <Link to="/medical-locations">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                Medical Locations
+              </button>
+            </Link>
+            <Link to="/medical-procedures">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
+                Emergency Procedures
+              </button>
+            </Link>
+          </>
+        );
     }
   };
 

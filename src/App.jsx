@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen bg-gray-800">
         <Routes>
           {/* Route for the Main Layout without Navbar */}
           <Route path="/" element={<MainLayout />} />

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MedicalProcedures = () => {
   return (
     <>
@@ -8,7 +10,7 @@ const MedicalProcedures = () => {
             Treating Shock
           </button>
           <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            CPR Cardiopulmonary Resuscitation
+            <Link to="/individual-emergency-procedures">CPR</Link>
           </button>
           <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
             Alergic Reactions

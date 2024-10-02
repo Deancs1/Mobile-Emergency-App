@@ -10,14 +10,10 @@ const Navbar = () => {
         return (
           <>
             <Link to="/medical-locations">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Medical Locations
-              </button>
+              <button className="navbarButton">Medical Locations</button>
             </Link>
             <Link to="/medical-procedures">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Emergency Procedures
-              </button>
+              <button className="navbarButton">Emergency Procedures</button>
             </Link>
           </>
         );
@@ -25,14 +21,10 @@ const Navbar = () => {
         return (
           <>
             <Link to="/emergency-call-numbers">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Emergency Numbers
-              </button>
+              <button className="navbarButton">Emergency Numbers</button>
             </Link>
             <Link to="/medical-procedures">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Emergency Procedures
-              </button>
+              <button className="navbarButton">Emergency Procedures</button>
             </Link>
           </>
         );
@@ -40,14 +32,10 @@ const Navbar = () => {
         return (
           <>
             <Link to="/emergency-call-numbers">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Emergency Numbers
-              </button>
+              <button className="navbarButton">Emergency Numbers</button>
             </Link>
             <Link to="/medical-locations">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Medical Locations
-              </button>
+              <button className="navbarButton">Medical Locations</button>
             </Link>
           </>
         );
@@ -55,20 +43,16 @@ const Navbar = () => {
         return (
           <>
             <Link to="/emergency-call-numbers">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Emergency Numbers
-              </button>
+              <button className="navbarButton">Emergency Numbers</button>
             </Link>
             <Link to="/medical-locations">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                Medical Locations
-              </button>
+              <button className="navbarButton">Medical Locations</button>
             </Link>
-            <Link to="/medical-procedures">
+            {/*  <Link to="/medical-procedures">
               <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
                 Emergency Procedures
               </button>
-            </Link>
+            </Link> */}
           </>
         );
     }
@@ -79,9 +63,7 @@ const Navbar = () => {
       <nav className="w-full bg-gray-800 p-4">
         <div className="flex justify-center items-center space-x-1">
           <Link to="/">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-              Home
-            </button>
+            <button className="navbarButton">Home</button>
           </Link>
           {renderButtons()}{" "}
           {/* Call the renderButtons function to display the appropriate buttons */}

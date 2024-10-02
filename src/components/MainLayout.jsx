@@ -47,12 +47,13 @@ const MainLayout = () => {
   return (
     <>
       <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
-        <h1 className="text-white text-lg mb-4">Home Screen</h1>
-        <h2 className="text-white">
+        <h1 className="text-white text-xl md:text-2xl mb-4">Home Screen</h1>
+        <h2 className="text-white text-sm md:text-base text-center mb-4">
           Choose a country from the list or use GPS location
         </h2>
-        <div className="flex">
-          <p className="text-white p-1">GPS</p>
+
+        <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+          <p className="text-white text-sm md:text-base">GPS</p>
           <ToggleSwitch labelOn="on" labelOff="off" />
         </div>
 
@@ -61,7 +62,7 @@ const MainLayout = () => {
 
         {/* search bar */}
         <div className="flex justify-center my-4 w-full">
-          <div className=" relative w-80">
+          <div className=" relative w-72 md:w-80">
             <input
               type="text"
               placeholder="Search for country"

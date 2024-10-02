@@ -2,6 +2,7 @@ import Presentation from "./Presentation";
 import presentationData from "../Data/PresentationData.json";
 import EmergencyProcedureVideo from "./EmergencyProcedureVideo";
 import { useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const IndividualEmergencyProcedures = () => {
   const { procedureName } = useParams();
@@ -12,7 +13,14 @@ const IndividualEmergencyProcedures = () => {
   console.log(selectedProcedure);
   return (
     <>
-      <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
+      <div className="bg-gray-800 pt-0 pb-4 min-h-screen flex flex-col items-center">
+        <div>
+          <Link to="/medical-procedures">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white py-4 px-2 rounded">
+              Emergency Procedures
+            </button>
+          </Link>
+        </div>
         <div className="bg-gray-800 p-4 rounded-lg w-full max-w-3xl">
           <p className="text-white text-lg mb-4 flex justify-center">
             {selectedProcedure.content}

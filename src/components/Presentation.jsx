@@ -26,7 +26,7 @@ const Presentation = ({ data }) => {
 
   return (
     <>
-      <div className="relative w-full h-[400px] flex justify-center items-center overflow-hidden">
+      <div className="relative w-full h-auto min-h-[300px] md:min-h-[400px] flex justify-center items-center overflow-hidden">
         {/* Left Arrow */}
         <div
           className="absolute top-1/2 left-4 transform -translate-y-1/2 hover:cursor-pointer drop-shadow-lg z-20"
@@ -43,7 +43,7 @@ const Presentation = ({ data }) => {
               src={item.src}
               alt={item.alt}
               key={index}
-              className={`rounded-sm shadow-md object-cover transition-transform duration-400 ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-full ${
+              className={`rounded-sm shadow-md object-contain transition-transform duration-400 ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-full md:max-h-[250px] ${
                 slide === index
                   ? "translate-x-0 z-10 opacity-100"
                   : slide > index
@@ -64,7 +64,7 @@ const Presentation = ({ data }) => {
         </div>
 
         {/* Slide Indicators (Dots) */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center items-center z-10">
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex justify-center items-center z-10">
           <span className="flex space-x-2">
             {data.map((_, index) => (
               <button

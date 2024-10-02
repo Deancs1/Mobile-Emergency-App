@@ -10,9 +10,7 @@ function EmergencyProcedureVideo({ url }) {
             src={url}
             title="YouTube video player"
             allowFullScreen
-            className="object-cover"
-            width="560"
-            height="315"
+            className="w-full h-auto max-w-[560px] aspect-video object-cover"
           ></iframe>
         </div>
       </div>

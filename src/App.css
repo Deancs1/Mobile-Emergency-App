@@ -42,6 +42,27 @@
   cursor: pointer; /* Change cursor on hover */
 }
 
-.button:hover {
+.homeButton:hover {
+  background-color: #1e40af; /* Darker background on hover */
+}
+
+.navbarButton {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  width: 125px; /* Set a consistent width */
+  height: 70px; /* Set a fixed height */
+  margin: 1px; /* Add some margin for spacing */
+  font-size: 16px; /* Set a consistent font size */
+  text-align: center; /* Center text */
+  overflow: hidden; /* Prevent text overflow */
+  background-color: #3b82f6; /* Optional: background color */
+  color: white; /* Optional: text color */
+  border: none; /* Optional: remove border */
+  border-radius: 7px; /* Optional: rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.navbarButton:hover {
   background-color: #1e40af; /* Darker background on hover */
 }

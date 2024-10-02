@@ -1,16 +1,207 @@
-{
-  "slides": [
-    {
-      "src": "https://picsum.photos/seed/img1/600/400",
-      "alt": "Image 1 for presentation"
-    },
-    {
-      "src": "https://picsum.photos/seed/img2/600/400",
-      "alt": "Image 2 for presentation"
-    },
-    {
-      "src": "https://picsum.photos/seed/img3/600/400",
-      "alt": "Image 3 for presentation"
-    }
-  ]
-}
+[
+  {
+    "name": "cpr",
+    "video": "https://www.youtube.com/embed/Mlp5dRIJk4M?start=230&si=SKGEy4cLBQM3s5Lf&amp",
+    "content": "C.P.R - cardiopulmonary resuscitation",
+    "slides": [
+      {
+        "src": "/images/cpr/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide2.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide3.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide4.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide5.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide6.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide7.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide8.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "heimlich",
+    "video": "https://www.youtube.com/embed/j45WfhxK_Hs?start=20&si=QIC3ywO2iJ5qZnlg&amp",
+    "content": "Choking - Heimlich Maneuver",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide2.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide3.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide4.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide5.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide6.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide7.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide8.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide9.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "alergic",
+    "video": "https://www.youtube.com/embed/r_qNTFa13uQ?start=19&si=Cg_-uQJ33pUOHcU0&amp",
+    "content": "Alergic Reactions",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "burn",
+    "video": "https://www.youtube.com/embed/TLr2qsEhpC8?start=20&si=AVU3nJ5EyGO-0l8I&amp",
+    "content": "Treating Burns",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "fracture",
+    "video": "https://www.youtube.com/embed/N-FY78--JWw?start=20&si=3imnpiArrWzobgIO&amp",
+    "content": "Treating Fractures and Sprains",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "head",
+    "video": "https://www.youtube.com/embed/KeZXgE9q6eo?start=20&si=uEf-fbumR2vMotrd&amp",
+    "content": "Treating Head Inury",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "shock",
+    "video": "https://www.youtube.com/embed/61urGQrmeNM?start=78&si=8XwvxBkqv0IhkUO5&amp",
+    "content": "Treating Shock",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "seizure",
+    "video": "https://www.youtube.com/embed/Ovsw7tdneqE?start=61&si=88G7dOaAt4Ylh-fF&amp",
+    "content": "Treating Seizures",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "unconscious",
+    "video": "https://www.youtube.com/embed/Mlp5dRIJk4M?start=124&si=DCn1XToj4X-g89R8&amp",
+    "content": "Unconsciousness - Recovery Position",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "basic",
+    "video": "https://www.youtube.com/embed/Mlp5dRIJk4M?start=26&si=p6kq1tgDYbhvghbl&amp",
+    "content": "Basic Life Support",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "bleeding",
+    "video": "https://www.youtube.com/embed/V8KiNURVjgk?start=19&si=-ofDBcL5ufc0Tk8Z&amp",
+    "content": "Bleeding Control - Nose Bleeds and Severe bleeding",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "poison",
+    "video": "https://www.youtube.com/embed/b2ieb8BZJuY?si=UsQMOKiJYXM2CSUi",
+    "content": "Treating Poisoning",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  },
+  {
+    "name": "heat",
+    "video": "https://www.youtube.com/embed/jvGC_dQJUtE?si=7t_e9oq1B2RvB4ZW",
+    "secondVideo": "https://www.youtube.com/embed/R6VdoV8dZRc?si=pEJY2rrLQ7b_D1fc",
+    "content": "Treating Heatstroke and Heat Exhaustion",
+    "content2": "Heat Exhaustion",
+    "slides": [
+      {
+        "src": "/images/heimlich/Slide1.jpg",
+        "alt": "Image 2 for presentation"
+      }
+    ]
+  }
+]

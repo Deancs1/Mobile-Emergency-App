@@ -3,3 +3,45 @@
   flex-direction: column;
   min-height: 100vh; /* Full height of viewport */
 }
+
+.button {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  width: 215px; /* Set a consistent width */
+  height: 80px; /* Set a fixed height */
+  margin: 0px; /* Add some margin for spacing */
+  font-size: 16px; /* Set a consistent font size */
+  text-align: center; /* Center text */
+  overflow: hidden; /* Prevent text overflow */
+  background-color: #1e3a8a; /* Optional: background color */
+  color: white; /* Optional: text color */
+  border: none; /* Optional: remove border */
+  border-radius: 5px; /* Optional: rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.button:hover {
+  background-color: #1e40af; /* Darker background on hover */
+}
+
+.homeButton {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  width: 320px; /* Set a consistent width */
+  height: 120px; /* Set a fixed height */
+  margin: 1px; /* Add some margin for spacing */
+  font-size: 16px; /* Set a consistent font size */
+  text-align: center; /* Center text */
+  overflow: hidden; /* Prevent text overflow */
+  background-color: #1e3a8a; /* Optional: background color */
+  color: white; /* Optional: text color */
+  border: none; /* Optional: remove border */
+  border-radius: 7px; /* Optional: rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.button:hover {
+  background-color: #1e40af; /* Darker background on hover */
+}

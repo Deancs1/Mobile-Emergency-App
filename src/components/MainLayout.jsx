@@ -100,28 +100,28 @@ const MainLayout = () => {
           </div>
         </div>
 
-        <div className="space-y-4 w-full max-w-md pt-20">
+        <div className="flex flex-col items-center space-y-4 w-full max-w-md mt-4">
           <Link
             to="/emergency-call-numbers"
             state={{
               countryName: selectedCountry,
               emergencyNumbers: selectedCountryData, //pass emergency numbers
             }}
-            className="bg-gray-700 text-white w-full p-4 rounded-lg flex items-center justify-center"
+            className="homeButton"
             style={{ textDecoration: "none" }}
           >
             Emergency Service Numbers
           </Link>
           <Link
             to="/medical-locations"
-            className="bg-gray-700 text-white w-full p-4 rounded-lg flex items-center justify-center"
+            className="homeButton"
             style={{ textDecoration: "none" }}
           >
             Medical Locations
           </Link>
           <Link
             to="/medical-procedures"
-            className="bg-gray-700 text-white w-full p-4 rounded-lg flex items-center justify-center"
+            className="homeButton"
             style={{ textDecoration: "none" }}
           >
             Medical Procedures

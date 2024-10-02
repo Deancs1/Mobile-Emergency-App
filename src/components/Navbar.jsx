@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="w-full bg-gray-800 p-4">
-        <div className="flex justify-center items-center space-x-4">
+        <div className="flex justify-center items-center space-x-1">
           <Link to="/">
             <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
               Home

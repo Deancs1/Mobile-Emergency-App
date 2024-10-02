@@ -5,43 +5,52 @@ const MedicalProcedures = () => {
     <>
       <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
         <h1 className="text-white text-lg mb-4">Medical Procedures</h1>
+        <div className="flex p-4">
+          <Link to="/individual-emergency-procedures/basic" className="flex">
+            <button className="button">Basic Life Support</button>
+          </Link>
+        </div>
         <div className="grid grid-cols-2 gap-4 w-full max-w-md">
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Treating Shock
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            <Link to="/individual-emergency-procedures">CPR</Link>
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Alergic Reactions
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Choking Heimlich Maneuver
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Seizure
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            unconscious Recovery Position
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Bleeding Control
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Heatstroke/Heat Exhaustion
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Burn Treatment
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Poisoning
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Fracture and Sprain
-          </button>
-          <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Alcohol Poisoning and Drug overdose
-          </button>
+          <Link to="/individual-emergency-procedures/shock" className="flex">
+            <button className="button">Treating Shock</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/cpr" className="flex">
+            <button className="button">CPR</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/alergic" className="flex">
+            <button className="button">Alergic Reactions</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/heimlich" className="flex">
+            <button className="button">Heimlich Maneuver</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/seizure" className="flex">
+            <button className="button">Seizure</button>
+          </Link>
+
+          <Link
+            to="/individual-emergency-procedures/unconscious"
+            className="flex"
+          >
+            <button className="button">Unconscious - Recovery Position</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/bleeding" className="flex">
+            <button className="button">Bleeding Control</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/heat" className="flex">
+            <button className="button">Heatstroke/Heat Exhaustion</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/burn" className="flex">
+            <button className="button">Burn Treatment</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/poison" className="flex">
+            <button className="button">Poisoning</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/fracture" className="flex">
+            <button className="button">Fracture and Sprain</button>
+          </Link>
+          <Link to="/individual-emergency-procedures/head" className="flex">
+            <button className="button">Head Injury</button>
+          </Link>
         </div>
       </div>
     </>

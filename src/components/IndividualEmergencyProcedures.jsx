@@ -36,12 +36,21 @@ const IndividualEmergencyProcedures = () => {
           <div className="mt-0 mb-0">
             <EmergencyProcedureVideo url={selectedProcedure.video} />
           </div>
+
           {/* Render content if it exists */}
           {selectedProcedure.content && (
             <div className="mt-4 text-white font-bold text-xl flex justify-center">
               <p>{selectedProcedure.content2}</p>
             </div>
           )}
+          <div
+            className="flex mb-2"
+            style={{
+              border: "3px solid white",
+            }}
+          >
+            <Presentation data={selectedProcedure.slides2} />
+          </div>
           {/* Conditionally render second video if it exists */}
           {selectedProcedure.secondVideo && (
             <div className="mt-4">

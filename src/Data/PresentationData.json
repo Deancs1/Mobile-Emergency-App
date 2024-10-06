@@ -98,8 +98,72 @@
     "content": "Treating Burns",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/burn/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide14.jpg",
+        "alt": "Image 14 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide15.jpg",
+        "alt": "Image 15 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide16.jpg",
+        "alt": "Image 16 for presentation"
+      },
+      {
+        "src": "/images/burn/Slide17.jpg",
+        "alt": "Image 17 for presentation"
       }
     ]
   },
@@ -109,8 +173,76 @@
     "content": "Treating Fractures and Sprains",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/fracture/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide14.jpg",
+        "alt": "Image 14 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide15.jpg",
+        "alt": "Image 15 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide16.jpg",
+        "alt": "Image 16 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide17.jpg",
+        "alt": "Image 17 for presentation"
+      },
+      {
+        "src": "/images/fracture/Slide18.jpg",
+        "alt": "Image 18 for presentation"
       }
     ]
   },
@@ -120,8 +252,60 @@
     "content": "Treating Head Inury",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/head/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/head/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/head/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/head/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/head/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/head/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/head/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/head/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/head/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/head/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/head/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/head/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/head/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/head/Slide14.jpg",
+        "alt": "Image 14 for presentation"
       }
     ]
   },
@@ -131,8 +315,60 @@
     "content": "Treating Shock",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
-        "alt": "Image 2 for presentation"
+        "src": "/images/shock/Slide1.jpg",
+        "alt": "Image 1 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide2.jpg",
+        "alt": "Image 2 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide3.jpg",
+        "alt": "Image 3 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide4.jpg",
+        "alt": "Image 4 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide5.jpg",
+        "alt": "Image 5 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide6.jpg",
+        "alt": "Image 6 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide7.jpg",
+        "alt": "Image 17 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide8.jpg",
+        "alt": "Image 8 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide9.jpg",
+        "alt": "Image 9 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide10.jpg",
+        "alt": "Image 10 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide11.jpg",
+        "alt": "Image 11 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide12.jpg",
+        "alt": "Image 12 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide13.jpg",
+        "alt": "Image 13 for schock presentation"
+      },
+      {
+        "src": "/images/shock/Slide14.jpg",
+        "alt": "Image 14 for schock presentation"
       }
     ]
   },
@@ -164,8 +400,60 @@
     "content": "Basic Life Support",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/basic/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/basic/Slide14.jpg",
+        "alt": "Image 14 for presentation"
       }
     ]
   },
@@ -186,8 +474,64 @@
     "content": "Treating Poisoning",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/poison/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide14.jpg",
+        "alt": "Image 14 for presentation"
+      },
+      {
+        "src": "/images/poison/Slide15.jpg",
+        "alt": "Image 15 for presentation"
       }
     ]
   },
@@ -195,12 +539,78 @@
     "name": "heat",
     "video": "https://www.youtube.com/embed/jvGC_dQJUtE?si=7t_e9oq1B2RvB4ZW",
     "secondVideo": "https://www.youtube.com/embed/R6VdoV8dZRc?si=pEJY2rrLQ7b_D1fc",
-    "content": "Treating Heatstroke and Heat Exhaustion",
-    "content2": "Heat Exhaustion",
+    "content": "Treating Heatstroke",
+    "content2": "Treating Heat Exhaustion",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/heatST/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/heatST/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      }
+    ],
+    "slides2": [
+      {
+        "src": "/images/heatEX/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide2.jpg",
+        "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/heatEX/Slide8.jpg",
+        "alt": "Image 8 for presentation"
       }
     ]
   }

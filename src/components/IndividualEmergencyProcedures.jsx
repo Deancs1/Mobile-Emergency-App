@@ -43,14 +43,18 @@ const IndividualEmergencyProcedures = () => {
               <p>{selectedProcedure.content2}</p>
             </div>
           )}
-          <div
-            className="flex mb-2"
-            style={{
-              border: "3px solid white",
-            }}
-          >
-            <Presentation data={selectedProcedure.slides2} />
-          </div>
+          {selectedProcedure.slides2 && selectedProcedure.secondVideo && (
+            <div
+              className="flex mb-2"
+              style={{
+                border: "3px solid white",
+              }}
+            >
+              {selectedProcedure.slides2 && (
+                <Presentation data={selectedProcedure.slides2} />
+              )}
+            </div>
+          )}
           {/* Conditionally render second video if it exists */}
           {selectedProcedure.secondVideo && (
             <div className="mt-4">

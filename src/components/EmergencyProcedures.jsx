@@ -17,8 +17,8 @@ const MedicalProcedures = () => {
           <Link to="/individual-emergency-procedures/cpr" className="flex">
             <button className="button">CPR</button>
           </Link>
-          <Link to="/individual-emergency-procedures/alergic" className="flex">
-            <button className="button">Alergic Reactions</button>
+          <Link to="/individual-emergency-procedures/allergic" className="flex">
+            <button className="button">Allergic Reactions</button>
           </Link>
           <Link to="/individual-emergency-procedures/heimlich" className="flex">
             <button className="button">Heimlich Maneuver</button>

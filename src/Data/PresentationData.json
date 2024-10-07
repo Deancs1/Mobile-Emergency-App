@@ -14,27 +14,75 @@
       },
       {
         "src": "/images/cpr/Slide3.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 3 for presentation"
       },
       {
         "src": "/images/cpr/Slide4.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 4 for presentation"
       },
       {
         "src": "/images/cpr/Slide5.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 5 for presentation"
       },
       {
         "src": "/images/cpr/Slide6.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 6 for presentation"
       },
       {
         "src": "/images/cpr/Slide7.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 7 for presentation"
       },
       {
         "src": "/images/cpr/Slide8.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide14.jpg",
+        "alt": "Image 14 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide15.jpg",
+        "alt": "Image 15 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide16.jpg",
+        "alt": "Image 16 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide17.jpg",
+        "alt": "Image 17 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide18.jpg",
+        "alt": "Image 18 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide19.jpg",
+        "alt": "Image 19 for presentation"
+      },
+      {
+        "src": "/images/cpr/Slide20.jpg",
+        "alt": "Image 20 for presentation"
       }
     ]
   },
@@ -45,7 +93,7 @@
     "slides": [
       {
         "src": "/images/heimlich/Slide1.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 1 for presentation"
       },
       {
         "src": "/images/heimlich/Slide2.jpg",
@@ -53,42 +101,102 @@
       },
       {
         "src": "/images/heimlich/Slide3.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 3 for presentation"
       },
       {
         "src": "/images/heimlich/Slide4.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 4 for presentation"
       },
       {
         "src": "/images/heimlich/Slide5.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 5 for presentation"
       },
       {
         "src": "/images/heimlich/Slide6.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 6 for presentation"
       },
       {
         "src": "/images/heimlich/Slide7.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 7 for presentation"
       },
       {
         "src": "/images/heimlich/Slide8.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 8 for presentation"
       },
       {
         "src": "/images/heimlich/Slide9.jpg",
-        "alt": "Image 2 for presentation"
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide11.jpg",
+        "alt": "Image 11 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide12.jpg",
+        "alt": "Image 12 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide13.jpg",
+        "alt": "Image 13 for presentation"
+      },
+      {
+        "src": "/images/heimlich/Slide14.jpg",
+        "alt": "Image 14 for presentation"
       }
     ]
   },
   {
-    "name": "alergic",
+    "name": "allergic",
     "video": "https://www.youtube.com/embed/r_qNTFa13uQ?start=19&si=Cg_-uQJ33pUOHcU0&amp",
-    "content": "Alergic Reactions",
+    "content": "Allergic Reactions",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/allergic/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/allergic/Slide11.jpg",
+        "alt": "Image 11 for presentation"
       }
     ]
   },
@@ -378,8 +486,52 @@
     "content": "Treating Seizures",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
-        "alt": "Image 2 for presentation"
+        "src": "/images/seizure/Slide1.jpg",
+        "alt": "Image 1 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide2.jpg",
+        "alt": "Image 2 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide3.jpg",
+        "alt": "Image 3 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide4.jpg",
+        "alt": "Image 4 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide5.jpg",
+        "alt": "Image 5 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide6.jpg",
+        "alt": "Image 6 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide7.jpg",
+        "alt": "Image 17 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide8.jpg",
+        "alt": "Image 8 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide9.jpg",
+        "alt": "Image 9 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide10.jpg",
+        "alt": "Image 10 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide11.jpg",
+        "alt": "Image 11 for schock presentation"
+      },
+      {
+        "src": "/images/seizure/Slide12.jpg",
+        "alt": "Image 12 for schock presentation"
       }
     ]
   },
@@ -389,8 +541,48 @@
     "content": "Unconsciousness - Recovery Position",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
-        "alt": "Image 2 for presentation"
+        "src": "/images/unconscious/Slide1.jpg",
+        "alt": "Image 1 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide2.jpg",
+        "alt": "Image 2 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide3.jpg",
+        "alt": "Image 3 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide4.jpg",
+        "alt": "Image 4 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide5.jpg",
+        "alt": "Image 5 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide6.jpg",
+        "alt": "Image 6 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide7.jpg",
+        "alt": "Image 17 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide8.jpg",
+        "alt": "Image 8 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide9.jpg",
+        "alt": "Image 9 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide10.jpg",
+        "alt": "Image 10 for schock presentation"
+      },
+      {
+        "src": "/images/unconscious/Slide11.jpg",
+        "alt": "Image 11 for schock presentation"
       }
     ]
   },
@@ -463,8 +655,48 @@
     "content": "Bleeding Control - Nose Bleeds and Severe bleeding",
     "slides": [
       {
-        "src": "/images/heimlich/Slide1.jpg",
+        "src": "/images/bleeding/Slide1.jpg",
+        "alt": "Image 1 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide2.jpg",
         "alt": "Image 2 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide3.jpg",
+        "alt": "Image 3 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide4.jpg",
+        "alt": "Image 4 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide5.jpg",
+        "alt": "Image 5 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide6.jpg",
+        "alt": "Image 6 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide7.jpg",
+        "alt": "Image 7 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide8.jpg",
+        "alt": "Image 8 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide9.jpg",
+        "alt": "Image 9 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide10.jpg",
+        "alt": "Image 10 for presentation"
+      },
+      {
+        "src": "/images/bleeding/Slide11.jpg",
+        "alt": "Image 11 for presentation"
       }
     ]
   },

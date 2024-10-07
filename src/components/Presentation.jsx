@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-//import "./Presentation.css";
 
 const Presentation = ({ data }) => {
   const [slide, setSlide] = useState(0);
@@ -37,22 +36,23 @@ const Presentation = ({ data }) => {
         </div>
 
         {/* Slides */}
-        {data.map((item, index) => {
-          return (
-            <img
-              src={item.src}
-              alt={item.alt}
-              key={index}
-              className={`rounded-sm shadow-md object-contain transition-transform duration-400 ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-full md:max-h-[250px] ${
-                slide === index
-                  ? "translate-x-0 z-10 opacity-100"
-                  : slide > index
-                  ? "-translate-x-full z-0 opacity-0"
-                  : "translate-x-full z-0 opacity-0"
-              }`}
-            />
-          );
-        })}
+        {data &&
+          data.map((item, index) => {
+            return (
+              <img
+                src={item.src}
+                alt={item.alt}
+                key={index}
+                className={`rounded-sm shadow-md object-contain transition-transform duration-400 ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-full md:max-h-[250px] ${
+                  slide === index
+                    ? "translate-x-0 z-10 opacity-100"
+                    : slide > index
+                    ? "-translate-x-full z-0 opacity-0"
+                    : "translate-x-full z-0 opacity-0"
+                }`}
+              />
+            );
+          })}
 
         {/* Right Arrow */}
         <div
@@ -66,15 +66,16 @@ const Presentation = ({ data }) => {
         {/* Slide Indicators (Dots) */}
         <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex justify-center items-center z-10">
           <span className="flex space-x-2">
-            {data.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-4 h-4 rounded-full shadow-lg ${
-                  slide === index ? "bg-gray-500" : "bg-white"
-                } hover:cursor-pointer`}
-              ></button>
-            ))}
+            {data &&
+              data.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-4 h-4 rounded-full shadow-lg ${
+                    slide === index ? "bg-gray-500" : "bg-white"
+                  } hover:cursor-pointer`}
+                ></button>
+              ))}
           </span>
         </div>
       </div>

@@ -6,7 +6,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-import "./MapView.css";
+import useLocation from "./useLocation";
 
 const libraries = ["places"];
 
@@ -15,7 +15,7 @@ const containerStyle = {
   height: "400px",
 };
 
-//const defaultLocation = { lat: 52.52, lng: 13.405 }; // Berlin coordinates
+const defaultLocation = { lat: 52.52, lng: 13.405 }; // Berlin coordinates
 
 const MapView = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -39,6 +39,7 @@ const MapView = () => {
             // center map to user's location
             if (mapRef.current) {
               mapRef.current.panTo(pos);
+              mapRef.current.setZoom(15);
             }
           },
           () => {
@@ -77,7 +78,6 @@ const MapView = () => {
           // center map on user's location
           if (mapRef.current) {
             mapRef.current.panTo(pos);
-            mapRef.current.setZoom(15);
           }
         },
         () => {

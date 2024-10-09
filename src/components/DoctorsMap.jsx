@@ -9,7 +9,6 @@ const DoctorsMap = ({ userLocation }) => {
   useEffect(() => {
     const fetchDoctors = async () => {
       if (userLocation) {
-        console.log("user location:", userLocation);
         const { lat, lng } = userLocation;
 
         try {
@@ -20,7 +19,20 @@ const DoctorsMap = ({ userLocation }) => {
           const data = await response.json();
 
           if (response.ok) {
-            setDoctors(data.results);
+            const doctorsWithDistance = data.results.map((doctor) => ({
+              ...doctor,
+              distance: calculateDistance(
+                lat,
+                lng,
+                doctor.geometry.location.lat,
+                doctor.geometry.location.lng
+              ), // Assuming the doctor object has a geometry property with location
+            }));
+
+            // Sort doctors by distance
+            doctorsWithDistance.sort((a, b) => a.distance - b.distance);
+
+            setDoctors(doctorsWithDistance);
           } else {
             console.error("Error fetching doctors:", data);
           }
@@ -35,6 +47,21 @@ const DoctorsMap = ({ userLocation }) => {
     fetchDoctors();
   }, [userLocation]);
 
+  // Function to calculate distance between two coordinates
+  const calculateDistance = (lat1, lng1, lat2, lng2) => {
+    const R = 6371; // Radius of the Earth in km
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLng = (lng2 - lng1) * (Math.PI / 180);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * (Math.PI / 180)) *
+        Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // Distance in km
+  };
+
   // Function to center the map on the user's current location
   const handleCenterMap = () => {
     if (mapViewRef.current) {
@@ -48,12 +75,28 @@ const DoctorsMap = ({ userLocation }) => {
         Nearby Doctors
       </h1>
       <MapView ref={mapViewRef} locations={doctors} /> {/* Pass the ref */}
+      {/* Button to center map */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
         onClick={handleCenterMap} // Add onClick handler
       >
         Current location
       </button>
+      {/* Render the list of doctors */}
+      <ul className="mt-4 w-full max-w-lg bg-white rounded-lg shadow-lg p-4">
+        {doctors.map((doctor) => (
+          <li
+            key={doctor.id}
+            className="p-4 border-b border-gray-300 last:border-b-0 transition-all hover:bg-gray-100 rounded-lg mb-2"
+          >
+            <h2 className="font-bold text-lg">{doctor.name}</h2>{" "}
+            {/* Assuming doctor object has a name property */}
+            <p className="text-gray-600 text-sm">
+              Distance: {doctor.distance.toFixed(2)} km
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

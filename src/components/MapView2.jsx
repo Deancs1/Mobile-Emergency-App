@@ -47,7 +47,7 @@ const MapView = forwardRef((props, ref) => {
     centerMap: () => {
       if (location && mapRef.current) {
         mapRef.current.panTo(location);
-        mapRef.current.setZoom(17);
+        mapRef.current.setZoom(15);
       } else {
         console.error("Cannot center map: location or mapRef is missing");
       }
@@ -65,7 +65,7 @@ const MapView = forwardRef((props, ref) => {
           id="map"
           mapContainerStyle={{ width: "100%", height: "400px" }}
           center={location || { lat: 52.52, lng: 13.405 }}
-          zoom={13}
+          zoom={12}
           onLoad={(map) => (mapRef.current = map)}
         >
           {/* User Location Marker */}

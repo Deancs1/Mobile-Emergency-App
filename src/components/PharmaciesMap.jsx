@@ -9,7 +9,6 @@ const PharmaciesMap = ({ userLocation }) => {
   useEffect(() => {
     const fetchPharmacies = async () => {
       if (userLocation) {
-        console.log("user location:", userLocation);
         const { lat, lng } = userLocation;
 
         try {
@@ -20,7 +19,20 @@ const PharmaciesMap = ({ userLocation }) => {
           const data = await response.json();
 
           if (response.ok) {
-            setPharmacies(data.results);
+            const pharmaciesWithDistance = data.results.map((pharmacy) => ({
+              ...pharmacy,
+              distance: calculateDistance(
+                lat,
+                lng,
+                pharmacy.geometry.location.lat,
+                pharmacy.geometry.location.lng
+              ), // Assuming the pharmacy object has a geometry property with location
+            }));
+
+            // Sort pharmacies by distance
+            pharmaciesWithDistance.sort((a, b) => a.distance - b.distance);
+
+            setPharmacies(pharmaciesWithDistance);
           } else {
             console.error("Error fetching pharmacies:", data);
           }
@@ -35,10 +47,25 @@ const PharmaciesMap = ({ userLocation }) => {
     fetchPharmacies();
   }, [userLocation]);
 
-  // Function to center the map on the user's current location
-  const handleCenterMap = () => {
+  // Function to calculate distance between two coordinates
+  const calculateDistance = (lat1, lng1, lat2, lng2) => {
+    const R = 6371; // Radius of the Earth in km
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLng = (lng2 - lng1) * (Math.PI / 180);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * (Math.PI / 180)) *
+        Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // Distance in km
+  };
+
+  // Function to center the map on a selected pharmacy's location
+  const handleCenterMap = (pharmacy) => {
     if (mapViewRef.current) {
-      mapViewRef.current.centerMap(); // Call centerMap method on the MapView component
+      mapViewRef.current.centerMap(pharmacy.geometry.location); // Pass the location to center the map
     }
   };
 
@@ -50,10 +77,26 @@ const PharmaciesMap = ({ userLocation }) => {
       <MapView ref={mapViewRef} locations={pharmacies} /> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
-        onClick={handleCenterMap} // Add onClick handler
+        onClick={() => handleCenterMap(userLocation)} // Center on user location
       >
         Current location
       </button>
+      {/* Render the list of pharmacies */}
+      <ul className="mt-4 w-full max-w-lg bg-white rounded-lg shadow-lg p-4">
+        {pharmacies.map((pharmacy) => (
+          <li
+            key={pharmacy.id}
+            className="p-4 border-b border-gray-300 last:border-b-0 transition-all hover:bg-gray-100 rounded-lg mb-2 cursor-pointer"
+            onClick={() => handleCenterMap(pharmacy)} // Center map on click
+          >
+            <h2 className="font-bold text-lg">{pharmacy.name}</h2>{" "}
+            {/* Assuming pharmacy object has a name property */}
+            <p className="text-gray-600 text-sm">
+              Distance: {pharmacy.distance.toFixed(2)} km
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

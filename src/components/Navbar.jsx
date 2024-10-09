@@ -39,6 +39,20 @@ const Navbar = () => {
             </Link>
           </>
         );
+      case "/medical-locations/doctors": // Handle DoctorsMap case
+      case "/medical-locations/hospitals": // Handle HospitalsMap case
+      case "/medical-locations/pharmacies": // Handle PharmaciesMap case
+        return (
+          <>
+            <Link to="/emergency-call-numbers">
+              <button className="navbarButton">Emergency Numbers</button>
+            </Link>
+            <Link to="/medical-procedures">
+              <button className="navbarButton">Emergency Procedures</button>
+            </Link>
+          </>
+        );
+
       default:
         return (
           <>

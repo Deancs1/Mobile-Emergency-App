@@ -17,6 +17,8 @@ import IndividualEmergencyProcedures from "./components/IndividualEmergencyProce
 import { Link } from "react-router-dom";
 import PharmaciesMap from "./components/PharmaciesMap";
 import useLocation from "./components/useLocation";
+import HospitalsMap from "./components/HospitalsMap";
+import DoctorsMap from "./components/DoctorsMap";
 
 function App() {
   const { location } = useLocation(true, 10, 5);
@@ -43,6 +45,14 @@ function App() {
             <Route
               path="/medical-locations/pharmacies"
               element={<PharmaciesMap userLocation={location} />}
+            />
+            <Route
+              path="/medical-locations/hospitals"
+              element={<HospitalsMap userLocation={location} />}
+            />
+            <Route
+              path="/medical-locations/doctors"
+              element={<DoctorsMap userLocation={location} />}
             />
           </Route>
         </Routes>

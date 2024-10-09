@@ -47,7 +47,9 @@ const MainLayout = () => {
   return (
     <>
       <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
-        <h1 className="text-white text-xl md:text-2xl mb-4">Home Screen</h1>
+        <h1 className="text-white text-xl md:text-2xl mb-4">
+          Emergency Travel App
+        </h1>
         <h2 className="text-white text-sm md:text-base text-center mb-4">
           Choose a country from the list or use GPS location
         </h2>

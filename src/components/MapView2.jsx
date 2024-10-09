@@ -9,43 +9,50 @@ import {
   GoogleMap,
   LoadScriptNext,
   MarkerF,
-  InfoWindow,
+  InfoWindowF,
 } from "@react-google-maps/api";
-import "./MapView";
 import useLocation from "./useLocation";
 
 const MapView = forwardRef((props, ref) => {
-  const { location, accuracy, error } = useLocation(true, 10, 5); // Example usage with accuracy threshold
-  const [isInfoWindowOpen, setIsInfoWindowOpen] = useState(false);
+  const { location, accuracy, error } = useLocation(true, 10, 5);
+  const [selectedPharmacy, setSelectedPharmacy] = useState(null);
   const mapRef = useRef(null);
+  const [currentAddress, setCurrentAddress] = useState("");
 
   useEffect(() => {
-    console.log(location, accuracy, error);
-
-    if (error) {
-      alert(error); // Handle errors better in production
-    }
     if (location && mapRef.current) {
       mapRef.current.panTo(location);
+      getAddressFromCoordinates(location);
     }
-  }, [location, error]);
+  }, [location]);
 
-  // Expose the panTo and zoom functionality to the parent component
+  const getAddressFromCoordinates = (location) => {
+    const geocoder = new window.google.maps.Geocoder();
+    geocoder.geocode({ location: location }, (results, status) => {
+      if (status === "OK" && results[0]) {
+        const address = results[0].formatted_address;
+        setCurrentAddress(address);
+        if (props.onAddressUpdate) {
+          props.onAddressUpdate(address); // Pass the address to the parent
+        }
+      } else {
+        console.error(
+          "Geocode was not successful for the following reason: " + status
+        );
+      }
+    });
+  };
+
   useImperativeHandle(ref, () => ({
     centerMap: () => {
-      console.log("Centering map to:", location);
       if (location && mapRef.current) {
-        // Center the map on the user's location
         mapRef.current.panTo(location);
-        // Set the zoom level (you can adjust the zoom level here)
-        mapRef.current.setZoom(15); // Adjust zoom as needed
+        mapRef.current.setZoom(15);
       } else {
         console.error("Cannot center map: location or mapRef is missing");
       }
     },
   }));
-
-  // Render part of the MapView remains unchanged...
 
   return (
     <div className="w-full max-w-md flex">
@@ -57,24 +64,60 @@ const MapView = forwardRef((props, ref) => {
         <GoogleMap
           id="map"
           mapContainerStyle={{ width: "100%", height: "400px" }}
-          center={location || { lat: 52.52, lng: 13.405 }} // Default to Berlin
-          zoom={14}
+          center={location || { lat: 52.52, lng: 13.405 }}
+          zoom={13}
           onLoad={(map) => (mapRef.current = map)}
         >
+          {/* User Location Marker */}
           {location && (
-            <MarkerF
-              position={location}
-              onClick={() => setIsInfoWindowOpen(true)}
-            />
+            <>
+              {console.log("rendering location")}
+              <MarkerF
+                position={location}
+                onClick={() => {
+                  setSelectedPharmacy("userLocation");
+                }}
+              >
+                {selectedPharmacy === "userLocation" && (
+                  <InfoWindowF
+                    position={location}
+                    onCloseClick={() => setSelectedPharmacy(null)}
+                  >
+                    <div>Your Location</div>
+                  </InfoWindowF>
+                )}
+              </MarkerF>
+            </>
           )}
-          {isInfoWindowOpen && location && (
-            <InfoWindow
-              position={location}
-              onCloseClick={() => setIsInfoWindowOpen(false)}
-            >
-              <div>Your Location</div>
-            </InfoWindow>
-          )}
+
+          {/* Pharmacy Markers */}
+          {props.locations &&
+            props.locations.map((pharmacy) => (
+              <>
+                {console.log("rendering pharmacy marker", pharmacy)}
+                <MarkerF
+                  key={pharmacy.place_id}
+                  position={{
+                    lat: pharmacy.geometry.location.lat,
+                    lng: pharmacy.geometry.location.lng,
+                  }}
+                  icon={{
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                  }}
+                  onClick={() => {
+                    setSelectedPharmacy(pharmacy);
+                  }}
+                >
+                  {selectedPharmacy?.place_id === pharmacy.place_id && (
+                    <InfoWindowF onCloseClick={() => setSelectedPharmacy(null)}>
+                      <div>
+                        <h3>{pharmacy.name}</h3>
+                      </div>
+                    </InfoWindowF>
+                  )}
+                </MarkerF>
+              </>
+            ))}
         </GoogleMap>
       </LoadScriptNext>
     </div>

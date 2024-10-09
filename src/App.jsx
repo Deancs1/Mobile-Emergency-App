@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 
-import MainLayout from "./components/mainLayout";
+import MainLayout from "./components/MainLayout";
 import Navbar from "./components/Navbar";
 import {
   BrowserRouter as Router,

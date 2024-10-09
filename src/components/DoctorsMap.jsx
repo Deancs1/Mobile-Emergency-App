@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import MapView from "./MapView2"; // Reuse the same map component
 
+const backend = import.meta.env.DEV
+  ? import.meta.env.VITE_BACKEND_DEV
+  : import.meta.env.VITE_BACKEND_PROD;
+
 const DoctorsMap = ({ userLocation }) => {
   const mapViewRef = useRef(); // Create a reference for the map
   const [doctors, setDoctors] = useState([]);
@@ -13,7 +17,7 @@ const DoctorsMap = ({ userLocation }) => {
 
         try {
           const response = await fetch(
-            `http://localhost:8081/api/doctors?lat=${lat}&lng=${lng}`
+            `${backend}/api/doctors?lat=${lat}&lng=${lng}`
           );
 
           const data = await response.json();

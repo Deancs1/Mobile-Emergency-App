@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const backend = import.meta.env.DEV
+  ? import.meta.env.VITE_BACKEND_DEV
+  : import.meta.env.VITE_BACKEND_PROD;
+
 function FetchEmergencyNumbers({ onCountriesFetched }) {
   //const [countries, setCountries] = useState([]);
 
   const fetchEmergencyData = async () => {
     try {
-      const responce = await axios.get(
-        "http://192.168.1.42:8081/api/countries"
-      );
+      const responce = await axios.get(`${backend}/api/countries`);
       //sort countries alphbetically
       const sortedCountries = responce.data.sort((a, b) =>
         a.Country.Name.localeCompare(b.Country.Name)

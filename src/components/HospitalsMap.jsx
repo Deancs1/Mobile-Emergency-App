@@ -6,6 +6,10 @@ const HospitalsMap = ({ userLocation }) => {
   const [hospitals, setHospitals] = useState([]);
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Your API key
 
+  const backend = import.meta.env.DEV
+    ? import.meta.env.VITE_BACKEND_DEV
+    : import.meta.env.VITE_BACKEND_PROD;
+
   useEffect(() => {
     const fetchHospitals = async () => {
       if (userLocation) {
@@ -13,7 +17,7 @@ const HospitalsMap = ({ userLocation }) => {
 
         try {
           const response = await fetch(
-            `http://localhost:8081/api/hospitals?lat=${lat}&lng=${lng}` // Update API endpoint for hospitals
+            `${backend}/api/hospitals?lat=${lat}&lng=${lng}` // Update API endpoint for hospitals
           );
 
           const data = await response.json();

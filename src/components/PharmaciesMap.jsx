@@ -6,6 +6,10 @@ const PharmaciesMap = ({ userLocation }) => {
   const [pharmacies, setPharmacies] = useState([]);
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Your API key
 
+  const backend = import.meta.env.DEV
+    ? import.meta.env.VITE_BACKEND_DEV
+    : import.meta.env.VITE_BACKEND_PROD;
+
   useEffect(() => {
     const fetchPharmacies = async () => {
       if (userLocation) {
@@ -13,7 +17,7 @@ const PharmaciesMap = ({ userLocation }) => {
 
         try {
           const response = await fetch(
-            `http://localhost:8081/api/pharmacies?lat=${lat}&lng=${lng}`
+            `${backend}/api/pharmacies?lat=${lat}&lng=${lng}`
           );
 
           const data = await response.json();

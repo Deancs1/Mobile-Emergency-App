@@ -128,10 +128,10 @@ const EmergencyCallNumbers = () => {
             </div>
           )}
         </div>
-        <div>
+        {/*  <div>
           <p className="text-white">Your current address</p>
           <h2 className="text-white">CURRENT ADDRESS</h2>
-        </div>
+        </div> */}
       </div>
     </>
   );

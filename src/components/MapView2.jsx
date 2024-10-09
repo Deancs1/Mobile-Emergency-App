@@ -111,7 +111,27 @@ const MapView = forwardRef((props, ref) => {
                   {selectedPharmacy?.place_id === pharmacy.place_id && (
                     <InfoWindowF onCloseClick={() => setSelectedPharmacy(null)}>
                       <div>
-                        <h3>{pharmacy.name}</h3>
+                        <h3
+                          style={{
+                            fontWeight: "bold",
+                            marginBottom: "10px",
+                          }}
+                        >
+                          {pharmacy.name}
+                        </h3>
+                        <p style={{ marginBottom: "10px" }}>
+                          {pharmacy.vicinity}
+                        </p>
+                        {/* Displaying opening hours with spacing */}
+                        <p style={{ marginBottom: "5px" }}>
+                          Status:{" "}
+                          {pharmacy.opening_hours?.open_now ? "Open" : "Closed"}
+                        </p>
+                        {/* Optionally, you could include more details such as rating */}
+                        <p style={{ marginTop: "5px" }}>
+                          Rating: {pharmacy.rating} (
+                          {pharmacy.user_ratings_total} ratings)
+                        </p>
                       </div>
                     </InfoWindowF>
                   )}

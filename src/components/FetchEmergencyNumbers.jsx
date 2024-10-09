@@ -25,8 +25,6 @@ function FetchEmergencyNumbers({ onCountriesFetched }) {
   useEffect(() => {
     fetchEmergencyData();
   }, []);
-
-  return <p>Welcome to the FetchEmergencyNumbers.jsx</p>;
 }
 
 export default FetchEmergencyNumbers;

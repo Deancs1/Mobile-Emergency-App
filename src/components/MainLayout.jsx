@@ -31,7 +31,7 @@ const MainLayout = () => {
     country.Country.Name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  //close dropdow when clicking outside of it
+  //close dropdown when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -103,12 +103,20 @@ const MainLayout = () => {
 
         <div className="flex flex-col items-center space-y-4 w-full max-w-md mt-4">
           <Link
-            to="/emergency-call-numbers"
-            state={{
-              countryName: selectedCountry,
-              emergencyNumbers: selectedCountryData, //pass emergency numbers
-            }}
-            className="homeButton"
+            to={selectedCountry ? "/emergency-call-numbers" : "#"} // Prevent navigation if no country is selected
+            state={
+              selectedCountry
+                ? {
+                    countryName: selectedCountry,
+                    emergencyNumbers: selectedCountryData, //pass emergency numbers
+                  }
+                : null
+            }
+            className={`homeButton ${
+              !selectedCountry
+                ? "bg-gray-500 cursor-not-allowed pointer-events-none"
+                : ""
+            }`}
             style={{ textDecoration: "none" }}
           >
             Emergency Service Numbers
@@ -127,9 +135,6 @@ const MainLayout = () => {
           >
             Medical Procedures
           </Link>
-          {/* <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
-            Emergency contact
-          </button> */}
         </div>
       </div>
     </>

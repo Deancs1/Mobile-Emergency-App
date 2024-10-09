@@ -66,3 +66,12 @@
 .navbarButton:hover {
   background-color: #1e40af; /* Darker background on hover */
 }
+
+.fullscreen-class {
+  width: 100vw;
+  height: 100vh;
+}
+
+.fullscreen-class img {
+  height: 100%;
+}

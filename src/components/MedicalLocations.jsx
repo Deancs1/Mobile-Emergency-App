@@ -41,7 +41,7 @@ const MedicalLocations = () => {
             </button>
           </div>
         </div>
-        <div className="flex space-x-4 w-full max-w-md mt-1">
+        <div className="flex justify-center space-x-4 w-full max-w-md mt-1">
           <Link to="/medical-locations/hospitals">
             <button className="bg-gray-700 text-white w-full p-4 rounded-lg">
               Hospitals

@@ -47,7 +47,7 @@ const MapView = forwardRef((props, ref) => {
     centerMap: () => {
       if (location && mapRef.current) {
         mapRef.current.panTo(location);
-        mapRef.current.setZoom(15);
+        mapRef.current.setZoom(17);
       } else {
         console.error("Cannot center map: location or mapRef is missing");
       }

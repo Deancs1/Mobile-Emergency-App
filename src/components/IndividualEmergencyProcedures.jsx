@@ -22,7 +22,7 @@ const IndividualEmergencyProcedures = () => {
           </Link>
         </div>
         <div className="bg-gray-800 p-4 rounded-lg w-full max-w-3xl">
-          <p className="text-white text-lg mb-4 flex justify-center">
+          <p className="flex justify-center text-4xl font-bold text-white mb-6 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent drop-shadow-lg leading-normal">
             {selectedProcedure.content}
           </p>
           <div
@@ -39,7 +39,7 @@ const IndividualEmergencyProcedures = () => {
 
           {/* Render content if it exists */}
           {selectedProcedure.content && (
-            <div className="mt-4 text-white font-bold text-xl flex justify-center">
+            <div className="flex justify-center text-4xl font-bold text-white mb-6 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent drop-shadow-lg p-4 leading-normal">
               <p>{selectedProcedure.content2}</p>
             </div>
           )}

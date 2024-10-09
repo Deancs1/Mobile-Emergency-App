@@ -34,7 +34,7 @@ const EmergencyCallNumbers = () => {
   return (
     <>
       <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
-        <h1 className="text-white text-lg mb-4">
+        <h1 className="text-4xl font-bold text-white mb-6 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent drop-shadow-lg leading-tight">
           Emergency Numbers for {countryName}
         </h1>
         {mobileStatus && (

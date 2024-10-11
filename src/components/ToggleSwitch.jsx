@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-const ToggleSwitch = ({ labelOn, labelOff }) => {
-  const [isChecked, setIsChecked] = useState(true);
-
-  const handleToggel = () => {
-    setIsChecked(!isChecked);
+const ToggleSwitch = ({ labelOn, labelOff, isChecked, onChange }) => {
+  const handleToggle = () => {
+    onChange(!isChecked);
   };
 
   return (
@@ -13,12 +11,12 @@ const ToggleSwitch = ({ labelOn, labelOff }) => {
         type="checkbox"
         className="sr-only peer"
         checked={isChecked}
-        onChange={handleToggel}
+        onChange={handleToggle}
       />
       <div
         className={`relative w-11 h-6 rounded-full ${
           isChecked ? "bg-green-600" : "bg-gray-200"
-        } peer  dark:peer-focus:ring-blue-800 dark:bg-gray-700`}
+        } peer dark:peer-focus:ring-blue-800 dark:bg-gray-700`}
       >
         <div
           className={`absolute top-0.5 start-[2px] h-5 w-5 bg-white border border-gray-300 rounded-full transition-all ${

@@ -11,42 +11,27 @@ import {
   MarkerF,
   InfoWindowF,
 } from "@react-google-maps/api";
-import useLocation from "./useLocation";
+//import useLocation from "./useLocation";
+import useLocationAddress from "./useLocationAddress";
 
 const MapView = forwardRef((props, ref) => {
-  const { location, accuracy, error } = useLocation(true, 10, 5);
-  const [selectedPharmacy, setSelectedPharmacy] = useState(null);
-  const mapRef = useRef(null);
-  const [currentAddress, setCurrentAddress] = useState("");
+  const { location, addressComponents, error } = useLocationAddress(true);  
+  const mapRef = useRef(null); 
+  const [selectedMarker, setSelectedMarker] = useState(null);
 
   useEffect(() => {
     if (location && mapRef.current) {
-      mapRef.current.panTo(location);
-      getAddressFromCoordinates(location);
+      mapRef.current.panTo({lat: location.latitude, lng: location.longitude});
+    
     }
   }, [location]);
 
-  const getAddressFromCoordinates = (location) => {
-    const geocoder = new window.google.maps.Geocoder();
-    geocoder.geocode({ location: location }, (results, status) => {
-      if (status === "OK" && results[0]) {
-        const address = results[0].formatted_address;
-        setCurrentAddress(address);
-        if (props.onAddressUpdate) {
-          props.onAddressUpdate(address); // Pass the address to the parent
-        }
-      } else {
-        console.error(
-          "Geocode was not successful for the following reason: " + status
-        );
-      }
-    });
-  };
+ 
 
   useImperativeHandle(ref, () => ({
     centerMap: () => {
       if (location && mapRef.current) {
-        mapRef.current.panTo(location);
+        mapRef.current.panTo({ lat: location.latitude, lng: location.longitude });
         mapRef.current.setZoom(15);
       } else {
         console.error("Cannot center map: location or mapRef is missing");
@@ -54,92 +39,65 @@ const MapView = forwardRef((props, ref) => {
     },
   }));
 
-  return (
-    <div className="w-full max-w-md flex">
-      <LoadScriptNext
-        googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
-        libraries={["places"]}
-        loadingElement={<div>Loading ...</div>}
-      >
-        <GoogleMap
-          id="map"
-          mapContainerStyle={{ width: "100%", height: "400px" }}
-          center={location || { lat: 52.52, lng: 13.405 }}
-          zoom={12}
-          onLoad={(map) => (mapRef.current = map)}
-        >
-          {/* User Location Marker */}
-          {location && (
-            <>
-              {console.log("rendering location")}
-              <MarkerF
-                position={location}
-                onClick={() => {
-                  setSelectedPharmacy("userLocation");
-                }}
-              >
-                {selectedPharmacy === "userLocation" && (
-                  <InfoWindowF
-                    position={location}
-                    onCloseClick={() => setSelectedPharmacy(null)}
-                  >
-                    <div>Your Location</div>
-                  </InfoWindowF>
-                )}
-              </MarkerF>
-            </>
-          )}
+  const getFormattedAddress = () => {
+    return [addressComponents.street, 
+      addressComponents.houseNumber, 
+      addressComponents.postalCode, 
+      addressComponents.city, 
+      addressComponents.country]
+      .filter(Boolean) // Remove null or undefined values
+      .join(", ");
+  };
 
-          {/* Pharmacy Markers */}
-          {props.locations &&
-            props.locations.map((pharmacy) => (
-              <>
-                {console.log("rendering pharmacy marker", pharmacy)}
-                <MarkerF
-                  key={pharmacy.place_id}
-                  position={{
-                    lat: pharmacy.geometry.location.lat,
-                    lng: pharmacy.geometry.location.lng,
-                  }}
-                  icon={{
-                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-                  }}
-                  onClick={() => {
-                    setSelectedPharmacy(pharmacy);
-                  }}
-                >
-                  {selectedPharmacy?.place_id === pharmacy.place_id && (
-                    <InfoWindowF onCloseClick={() => setSelectedPharmacy(null)}>
-                      <div>
-                        <h3
-                          style={{
-                            fontWeight: "bold",
-                            marginBottom: "10px",
-                          }}
-                        >
-                          {pharmacy.name}
-                        </h3>
-                        <p style={{ marginBottom: "10px" }}>
-                          {pharmacy.vicinity}
-                        </p>
-                        {/* Displaying opening hours with spacing */}
-                        <p style={{ marginBottom: "5px" }}>
-                          Status:{" "}
-                          {pharmacy.opening_hours?.open_now ? "Open" : "Closed"}
-                        </p>
-                        {/* Optionally, you could include more details such as rating */}
-                        <p style={{ marginTop: "5px" }}>
-                          Rating: {pharmacy.rating} (
-                          {pharmacy.user_ratings_total} ratings)
-                        </p>
-                      </div>
-                    </InfoWindowF>
-                  )}
-                </MarkerF>
-              </>
-            ))}
+  // format the address as a single string
+  const formattedAddress = getFormattedAddress(); 
+
+  return (
+    <div className="w-full max-w-md flex flex-col">
+      <LoadScriptNext 
+      googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY} 
+      libraries={["places"]}
+      >
+
+        <GoogleMap id="map" mapContainerStyle={{ width: "100%", height: "400px" }} center={location ? { lat: location.latitude, lng: location.longitude } : { lat: 52.52, lng: 13.405 }} zoom={12} onLoad={(map) => (mapRef.current = map)}>
+          {location && (
+            <MarkerF position={{ lat: location.latitude, lng: location.longitude }} onClick={() => setSelectedMarker("userLocation")}>
+              {selectedMarker === "userLocation" && (
+                <InfoWindowF position={{ lat: location.latitude, lng: location.longitude }} onCloseClick={() => setSelectedMarker(null)}>
+                <div>
+                  <p className="font-bold mb-1">Your Location</p>
+                  <p className="m-0">{formattedAddress || "Fetching address..."}</p>
+                </div>
+              </InfoWindowF>
+              
+              
+              )}
+            </MarkerF>
+          )}
+          {props.locations && Array.isArray(props.locations) && props.locations.map((marker) => ( 
+            <MarkerF key={marker.place_id} position={{ lat: marker.geometry.location.lat, lng: marker.geometry.location.lng }} onClick={() => setSelectedMarker(marker)}> 
+            {selectedMarker?.place_id === marker.place_id && ( 
+            <InfoWindowF position={{ lat: marker.geometry.location.lat, lng: marker.geometry.location.lng }} onCloseClick={() => setSelectedMarker(null)}>
+            <div>
+              <p className="font-bold mb-1">{marker.name}</p>
+              <p className="m-0">Location: {marker.vicinity}</p>
+              <p>Status: {marker.opening_hours?.open_now ? "Open" : "Closed"}</p>
+              <p>Rating: {marker.rating} ({marker.user_ratings_total} ratings)</p>
+            </div>
+          </InfoWindowF>
+          
+ )}
+            </MarkerF>
+          ))}
         </GoogleMap>
       </LoadScriptNext>
+      <div className="mt-4">
+        <p className="text-white flex justify-center">
+          <strong>Current Location:</strong>
+        </p>
+        <p className="text-white flex justify-center">{formattedAddress || "Fetching address..."}</p>
+        {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      </div>
     </div>
   );
 });

@@ -101,7 +101,7 @@ const MainLayout = () => {
       {error && <div style={{ color: "red" }}>Error: {error}</div>}
       {isGpsEnabled && location && (
         <div className="text-white">
-          You are in: {country}
+          You are in: {country}, {city}
           {/* <p>Latitude: {location.latitude}</p>
           <p>Longitude: {location.longitude}</p>
           <p>Country: {country}</p>

@@ -1,15 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
-import MapView from "./MapView2"; // Your map component
+import MapView from "./MapView2"; //  map component
 import { Link } from "react-router-dom";
 
 const HospitalsMap = ({ userLocation }) => {
   const mapViewRef = useRef(); // Create a reference for the map
   const [hospitals, setHospitals] = useState([]);
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Your API key
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; //  API key
 
   const backend = import.meta.env.DEV
     ? import.meta.env.VITE_BACKEND_DEV
     : import.meta.env.VITE_BACKEND_PROD;
+
+
+    // Function to calculate distance between two coordinates
+  const calculateDistance = (lat1, lng1, lat2, lng2) => {
+    const R = 6371; // Radius of the Earth in km
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLng = (lng2 - lng1) * (Math.PI / 180);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * (Math.PI / 180)) *
+        Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // Distance in km
+  };
+
 
   useEffect(() => {
     const fetchHospitals = async () => {
@@ -52,20 +69,7 @@ const HospitalsMap = ({ userLocation }) => {
     fetchHospitals();
   }, [userLocation]);
 
-  // Function to calculate distance between two coordinates
-  const calculateDistance = (lat1, lng1, lat2, lng2) => {
-    const R = 6371; // Radius of the Earth in km
-    const dLat = (lat2 - lat1) * (Math.PI / 180);
-    const dLng = (lng2 - lng1) * (Math.PI / 180);
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(lat1 * (Math.PI / 180)) *
-        Math.cos(lat2 * (Math.PI / 180)) *
-        Math.sin(dLng / 2) *
-        Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; // Distance in km
-  };
+  
 
   // Function to center the map on the user's current location
   const handleCenterMap = () => {

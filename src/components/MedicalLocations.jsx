@@ -25,10 +25,10 @@ const MedicalLocations = () => {
         </h1>
         <div className="flex flex-col items-center p-4 w-full max-w-md">
           {/* Display the current address */}
-          <div className="text-white">
+          {/* <div className="text-white">
             <p className="text-center">Your Current Address is:</p>
             {currentAddress || "Loading address..."}
-          </div>
+          </div> */}
           <MapView
             ref={mapViewRef}
             placeTypes={["hospital", "pharmacy", "doctor"]}

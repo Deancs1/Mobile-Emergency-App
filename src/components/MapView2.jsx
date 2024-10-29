@@ -11,7 +11,7 @@ import {
   MarkerF,
   InfoWindowF,
 } from "@react-google-maps/api";
-//import useLocation from "./useLocation";
+
 import useLocationAddress from "./useLocationAddress";
 
 const MapView = forwardRef((props, ref) => {
@@ -38,6 +38,23 @@ const MapView = forwardRef((props, ref) => {
       }
     },
   }));
+
+  const fetchPlaceDetails = async (placeId) => {
+    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=<span class="math-inline">\{placeId\}&fields\=name,formatted\_address,vicinity,rating,user\_ratings\_total,formatted\_phone\_number,website,photos&key\=</span>{apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const placeDetails = data.result;
+      return placeDetails;
+    } catch (error) {
+      console.error('Error fetching place details:', error);
+      return null;
+    }
+   
+  };
+
 
   const getFormattedAddress = () => {
     return [addressComponents.street, 
@@ -75,14 +92,35 @@ const MapView = forwardRef((props, ref) => {
             </MarkerF>
           )}
           {props.locations && Array.isArray(props.locations) && props.locations.map((marker) => ( 
-            <MarkerF key={marker.place_id} position={{ lat: marker.geometry.location.lat, lng: marker.geometry.location.lng }} onClick={() => setSelectedMarker(marker)}> 
+            <MarkerF key={marker.place_id} position={{ lat: marker.geometry.location.lat, lng: marker.geometry.location.lng }} 
+            icon={props.icon}
+            onClick={() => setSelectedMarker(marker)}> 
             {selectedMarker?.place_id === marker.place_id && ( 
             <InfoWindowF position={{ lat: marker.geometry.location.lat, lng: marker.geometry.location.lng }} onCloseClick={() => setSelectedMarker(null)}>
             <div>
               <p className="font-bold mb-1">{marker.name}</p>
-              <p className="m-0">Location: {marker.vicinity}</p>
+              <p className="m-0">Address: {marker.vicinity}</p>
               <p>Status: {marker.opening_hours?.open_now ? "Open" : "Closed"}</p>
               <p>Rating: {marker.rating} ({marker.user_ratings_total} ratings)</p>
+              
+      {selectedMarker?.photos && (
+        <div className="photos">
+          {/* Limit displayed photos to the first 3 */}
+          {selectedMarker.photos.slice(0, 3).map((photo) => (
+            <img
+              key={photo.photo_reference}
+              src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference=${photo.photo_reference}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
+              alt={selectedMarker.name}
+            />
+          ))}
+        </div>
+      )}
+      {/* Handle reviews (more complex, see next step) */}
+      {selectedMarker?.reviews && (
+        <div className="reviews">
+          {/* Implement review display logic (optional) */}
+        </div>
+      )}
             </div>
           </InfoWindowF>
           

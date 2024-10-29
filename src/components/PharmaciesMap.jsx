@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import MapView from "./MapView2"; // Your map component
 import { Link } from "react-router-dom";
+import pharmacyIcon from "../icons/pharmacy-pin.svg"; // Your pharmacy icon
 
 const PharmaciesMap = ({ userLocation }) => {
   const mapViewRef = useRef(); // Create a reference for the map
@@ -85,7 +86,7 @@ const PharmaciesMap = ({ userLocation }) => {
       <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent drop-shadow-lg leading-normal">
         Nearby Pharmacies
       </h1>
-      <MapView ref={mapViewRef} locations={pharmacies} /> {/* Pass the ref */}
+      <MapView ref={mapViewRef} locations={pharmacies} icon={pharmacyIcon} /> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
         onClick={() => handleCenterMap(userLocation)} // Center on user location

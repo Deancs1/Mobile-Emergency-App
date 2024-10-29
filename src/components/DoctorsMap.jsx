@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const backend = import.meta.env.DEV
   ? import.meta.env.VITE_BACKEND_DEV
   : import.meta.env.VITE_BACKEND_PROD;
+  import pharmacyIcon from "../icons/pharmacy-pin.svg"; // Your pharmacy icon
 
 const DoctorsMap = ({ userLocation }) => {
   const mapViewRef = useRef(); // Create a reference for the map
@@ -84,7 +85,7 @@ const DoctorsMap = ({ userLocation }) => {
       <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent drop-shadow-lg leading-normal">
         Nearby Doctors
       </h1>
-      <MapView ref={mapViewRef} locations={doctors} /> {/* Pass the ref */}
+      <MapView ref={mapViewRef} locations={doctors} icon={pharmacyIcon} /> {/* Pass the ref */}
       {/* Button to center map */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"

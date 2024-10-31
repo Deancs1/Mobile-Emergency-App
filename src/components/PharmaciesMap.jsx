@@ -12,6 +12,7 @@ const PharmaciesMap = ({ userLocation }) => {
     ? import.meta.env.VITE_BACKEND_DEV
     : import.meta.env.VITE_BACKEND_PROD;
     
+    console.log("backend", backend);
 
   useEffect(() => {
     const fetchPharmacies = async () => {

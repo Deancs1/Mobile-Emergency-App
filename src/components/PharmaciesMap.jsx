@@ -3,6 +3,7 @@ import MapView from "./MapView2"; // Your map component
 import { Link } from "react-router-dom";
 import pharmacyIcon from "../icons/pharmacy-pin.svg"; // Your pharmacy icon
 import calculateDistance from "./calculateDistance";
+import handleCenterMap from "./CenterMap";
 
 const PharmaciesMap = ({ userLocation }) => {
   const mapViewRef = useRef(); // Create a reference for the map
@@ -57,13 +58,6 @@ const PharmaciesMap = ({ userLocation }) => {
   }, [userLocation]);
 
 
-  // Function to center the map on a selected pharmacy's location
-  const handleCenterMap = (pharmacy) => {
-    if (mapViewRef.current) {
-      mapViewRef.current.centerMap(); // Pass the location to center the map
-    }
-  };
-
   return (
     <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
       <Link to="/medical-locations">
@@ -77,9 +71,9 @@ const PharmaciesMap = ({ userLocation }) => {
       <MapView ref={mapViewRef} locations={pharmacies} icon={pharmacyIcon} /> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
-        onClick={() => handleCenterMap(userLocation)} // Center on user location
+        onClick={() => {handleCenterMap(mapViewRef)}}
       >
-        Current location
+        Zoom in
       </button>
       {/* Render the list of pharmacies */}
       <ul className="mt-4 w-full max-w-lg bg-white rounded-lg shadow-lg p-4">
@@ -87,7 +81,7 @@ const PharmaciesMap = ({ userLocation }) => {
           <li
             key={pharmacy.id}
             className="p-4 border-b border-gray-300 last:border-b-0 transition-all hover:bg-gray-100 rounded-lg mb-2 cursor-pointer"
-            onClick={() => handleCenterMap(pharmacy)} // Center map on click
+            //onClick={() => handleCenterMap(pharmacy)} // Center map on click
           >
             <h2 className="font-bold text-lg">{pharmacy.name}</h2>{" "}
             {/* Assuming pharmacy object has a name property */}

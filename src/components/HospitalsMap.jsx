@@ -72,10 +72,12 @@ const HospitalsMap = ({ userLocation }) => {
       <MapView ref={mapViewRef} locations={hospitals} icon={hospitalIcon}/> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
+
         onClick={()=>{
           handleCenterMap(mapViewRef)}} // Add onClick handler
+
       >
-        Current location
+        Zoom in
       </button>
       {/* Render the list of hospitals */}
       <ul className="mt-4 w-full max-w-lg bg-white rounded-lg shadow-lg p-4">

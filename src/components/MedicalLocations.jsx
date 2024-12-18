@@ -5,7 +5,9 @@ import handleCenterMap from "./CenterMap";
 
 const MedicalLocations = () => {
   const mapViewRef = useRef();
+
   const [currentAddress, setCurrentAddress] = useState("");
+
 
   // Callback to update the current address from MapView
   const handleAddressUpdate = (address) => {

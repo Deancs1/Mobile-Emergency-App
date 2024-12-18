@@ -70,10 +70,12 @@ const DoctorsMap = ({ userLocation }) => {
       {/* Button to center map */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
+ feature-branch-medical-locations-map
         onClick={() =>{
           handleCenterMap(mapViewRef)}} // Add onClick handler
+
       >
-        Current location
+        Zoom in
       </button>
       {/* Render the list of doctors */}
       <ul className="mt-4 w-full max-w-lg bg-white rounded-lg shadow-lg p-4">

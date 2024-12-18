@@ -76,6 +76,14 @@ const MapView = forwardRef((props, ref) => {
       libraries={["places"]}
       >
 
+<div className="mt-4">
+        <p className="text-white flex justify-center">
+          <strong>Current Location:</strong>
+        </p>
+        <p className="text-white flex justify-center">{formattedAddress || "Fetching address..."}</p>
+        {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      </div>
+
         <GoogleMap id="map" mapContainerStyle={{ width: "100%", height: "400px" }} center={location ? { lat: location.latitude, lng: location.longitude } : { lat: 52.52, lng: 13.405 }} zoom={12} onLoad={(map) => (mapRef.current = map)}>
           {location && (
             <MarkerF position={{ lat: location.latitude, lng: location.longitude }} onClick={() => setSelectedMarker("userLocation")}>
@@ -129,13 +137,7 @@ const MapView = forwardRef((props, ref) => {
           ))}
         </GoogleMap>
       </LoadScriptNext>
-      <div className="mt-4">
-        <p className="text-white flex justify-center">
-          <strong>Current Location:</strong>
-        </p>
-        <p className="text-white flex justify-center">{formattedAddress || "Fetching address..."}</p>
-        {error && <p style={{ color: "red" }}>Error: {error}</p>}
-      </div>
+      
     </div>
   );
 });

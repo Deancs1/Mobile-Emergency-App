@@ -57,6 +57,7 @@ const PharmaciesMap = ({ userLocation }) => {
     fetchPharmacies();
   }, [userLocation]);
 
+
   return (
     <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
       <Link to="/medical-locations">
@@ -70,9 +71,11 @@ const PharmaciesMap = ({ userLocation }) => {
       <MapView ref={mapViewRef} locations={pharmacies} icon={pharmacyIcon} /> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
+
         onClick={() => handleCenterMap(mapViewRef)} // Center on user location
+
       >
-        Current location
+        Zoom in
       </button>
       {/* Render the list of pharmacies */}
       <ul className="mt-4 w-full max-w-lg bg-white rounded-lg shadow-lg p-4">
@@ -80,7 +83,7 @@ const PharmaciesMap = ({ userLocation }) => {
           <li
             key={pharmacy.id}
             className="p-4 border-b border-gray-300 last:border-b-0 transition-all hover:bg-gray-100 rounded-lg mb-2 cursor-pointer"
-            onClick={() => handleCenterMap(pharmacy)} // Center map on click
+            //onClick={() => handleCenterMap(pharmacy)} // Center map on click
           >
             <h2 className="font-bold text-lg">{pharmacy.name}</h2>{" "}
             {/* Assuming pharmacy object has a name property */}

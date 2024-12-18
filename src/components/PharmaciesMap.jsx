@@ -71,7 +71,9 @@ const PharmaciesMap = ({ userLocation }) => {
       <MapView ref={mapViewRef} locations={pharmacies} icon={pharmacyIcon} /> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
-        onClick={() => {handleCenterMap(mapViewRef)}}
+
+        onClick={() => handleCenterMap(mapViewRef)} // Center on user location
+
       >
         Zoom in
       </button>

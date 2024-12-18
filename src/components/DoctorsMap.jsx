@@ -55,6 +55,7 @@ const DoctorsMap = ({ userLocation }) => {
     fetchDoctors();
   }, [userLocation]);
 
+
   return (
     <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
       <Link to="/medical-locations">
@@ -69,7 +70,10 @@ const DoctorsMap = ({ userLocation }) => {
       {/* Button to center map */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
-        onClick={() => {handleCenterMap(mapViewRef)}}
+ feature-branch-medical-locations-map
+        onClick={() =>{
+          handleCenterMap(mapViewRef)}} // Add onClick handler
+
       >
         Zoom in
       </button>

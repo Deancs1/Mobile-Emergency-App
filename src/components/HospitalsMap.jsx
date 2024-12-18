@@ -3,6 +3,7 @@ import MapView from "./MapView2"; //  map component
 import { Link } from "react-router-dom";
 import hospitalIcon from "../icons/hospital.svg"; //  hospital icon
 import calculateDistance from "./calculateDistance";
+import handleCenterMap from "./CenterMap";
 
 const HospitalsMap = ({ userLocation }) => {
   const mapViewRef = useRef(); // Create a reference for the map
@@ -58,13 +59,6 @@ const HospitalsMap = ({ userLocation }) => {
 
   
 
-  // Function to center the map on the user's current location
-  const handleCenterMap = () => {
-    if (mapViewRef.current) {
-      mapViewRef.current.centerMap(); // Call centerMap method on the MapView component
-    }
-  };
-
   return (
     <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
       <Link to="/medical-locations">
@@ -78,7 +72,8 @@ const HospitalsMap = ({ userLocation }) => {
       <MapView ref={mapViewRef} locations={hospitals} icon={hospitalIcon}/> {/* Pass the ref */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
-        onClick={handleCenterMap} // Add onClick handler
+        onClick={()=>{
+          handleCenterMap(mapViewRef)}} // Add onClick handler
       >
         Current location
       </button>

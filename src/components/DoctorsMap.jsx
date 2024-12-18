@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import MapView from "./MapView2"; // Reuse the same map component
 import { Link } from "react-router-dom";
 import calculateDistance from "./calculateDistance";
+import handleCenterMap from "./CenterMap";
 
 const backend = import.meta.env.DEV
   ? import.meta.env.VITE_BACKEND_DEV
@@ -54,12 +55,6 @@ const DoctorsMap = ({ userLocation }) => {
     fetchDoctors();
   }, [userLocation]);
 
-  // Function to center the map on the user's current location
-  const handleCenterMap = () => {
-    if (mapViewRef.current) {
-      mapViewRef.current.centerMap(); // Call centerMap method on the MapView component
-    }
-  };
 
   return (
     <div className="bg-gray-800 p-4 min-h-screen flex flex-col items-center">
@@ -75,7 +70,8 @@ const DoctorsMap = ({ userLocation }) => {
       {/* Button to center map */}
       <button
         className="bg-gray-700 text-white w-auto p-2 rounded-lg mt-4"
-        onClick={handleCenterMap} // Add onClick handler
+        onClick={() =>{
+          handleCenterMap(mapViewRef)}} // Add onClick handler
       >
         Current location
       </button>

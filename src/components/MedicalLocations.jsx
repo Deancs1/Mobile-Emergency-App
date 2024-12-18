@@ -1,16 +1,11 @@
 import React, { useRef, useState } from "react";
 import MapView from "./MapView2";
 import { Link } from "react-router-dom";
+import handleCenterMap from "./CenterMap";
 
 const MedicalLocations = () => {
   const mapViewRef = useRef();
   const [currentAddress, setCurrentAddress] = useState("");
-
-  const handleCenterMap = () => {
-    if (mapViewRef.current) {
-      mapViewRef.current.centerMap();
-    }
-  };
 
   // Callback to update the current address from MapView
   const handleAddressUpdate = (address) => {
@@ -37,9 +32,9 @@ const MedicalLocations = () => {
           <div className="flex p-4">
             <button
               className="bg-gray-700 text-white w-full p-4 rounded-lg"
-              onClick={handleCenterMap}
+              onClick={() => {handleCenterMap(mapViewRef)}}
             >
-              Current Location
+              Zoom in
             </button>
           </div>
         </div>
